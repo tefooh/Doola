@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة المستر</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        
+        <!-- Left Column for Donor Names -->
+        <div class="donors-container">
+            <h2>المتبرعون</h2>
+            <div class="donor-input">
+                <input type="text" id="donorName" placeholder="أدخل اسم المتبرع">
+                <button id="addDonorBtn" class="btn">إضافة</button>
+            </div>
+            <div id="donorsList"></div>
+        </div>
+
+        <div class="game-container">
+            <h1>لعبة المستر</h1>
+            <div id="puzzle" class="puzzle-grid"></div>
+            <div class="buttons">
+                <button id="newGameBtn" class="btn">لعبة جديدة</button>
+                <button id="showAnswersBtn" class="btn">إظهار الإجابات</button>
+            </div>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="leaderboard-container">
+            <h2>Leaderboard</h2>
+            <div class="leaderboard">
+                <div class="leader">
+                    <input id="firstName" value="لاعب 1" class="name-input">
+                    <span id="firstScore">0</span>
+                    <div class="arrows">
+                        <button onclick="increasePoints('first')">▲</button>
+                        <button onclick="decreasePoints('first')">▼</button>
+                    </div>
+                </div>
+                <div class="leader">
+                    <input id="secondName" value="لاعب 2" class="name-input">
+                    <span id="secondScore">0</span>
+                    <div class="arrows">
+                        <button onclick="increasePoints('second')">▲</button>
+                        <button onclick="decreasePoints('second')">▼</button>
+                    </div>
+                </div>
+                <div class="leader">
+                    <input id="thirdName" value="لاعب 3" class="name-input">
+                    <span id="thirdScore">0</span>
+                    <div class="arrows">
+                        <button onclick="increasePoints('third')">▲</button>
+                        <button onclick="decreasePoints('third')">▼</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

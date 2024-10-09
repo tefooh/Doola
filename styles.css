@@ -1,0 +1,204 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle, rgba(43,43,43,1) 0%, rgba(10,10,10,1) 100%);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
+    filter: blur(10px);
+    z-index: 0;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-family: 'Amiri', serif; /* Arabic font */
+    text-shadow: 0px 0px 10px #f39c12;
+    margin-bottom: 20px;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+}
+
+.puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.puzzle-grid div {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.puzzle-grid div:hover {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d35400;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.leaderboard-container, .donors-container {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    width: 300px;
+    position: relative;
+}
+
+.leaderboard h2, .donors-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.leaderboard .leader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 8px;
+}
+
+.leader:nth-child(1) {
+    background-color: gold;
+}
+
+.leader:nth-child(2) {
+    background-color: silver;
+}
+
+.leader:nth-child(3) {
+    background-color: #cd7f32; /* Bronze */
+}
+
+.arrows button {
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.arrows button:hover {
+    color: #f39c12;
+    transform: scale(1.2);
+}
+
+.name-input {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    width: 100px;
+}
+
+.name-input:focus {
+    outline: none;
+}
+
+.donors-container .donor-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.donor-input input {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#donorsList div {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #f39c12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#donorsList div::before, #donorsList div::after {
+    content: "❤";
+    margin: 0 5px;
+    color: red;
+}
+
+#donorsList div:hover {
+    transform: scale(1.1);
+    text-shadow: 0px 0px 15px #f39c12;
+}
+
+#donorsList div::before, #donorsList div::after {
+    font-size: 1.5em;
+}
